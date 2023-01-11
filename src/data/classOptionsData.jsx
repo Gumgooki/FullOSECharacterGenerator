@@ -641,7 +641,7 @@ const classOptionsData = [
   },
   {
     name: "Friar",
-    category: "advanced",
+    category: "dolemnwood",
     requirements: null,
     primeReqs: ["wisdom"],
     hd: 4,
@@ -669,7 +669,7 @@ const classOptionsData = [
   },
   {
     name: "Elf (DV)",
-    category: "advanced",
+    category: "dolemnwood",
     requirements: "Minimum 9 dexterity, Minimum 9 intelligence",
     primeReqs: ["charisma"],
     hd: 6,
@@ -699,7 +699,7 @@ const classOptionsData = [
   },
   {
     name: "Grimalkin",
-    category: "advanced",
+    category: "dolemnwood",
     requirements: "Minimum 9 intelligence",
     primeReqs: ["dexterity"],
     hd: 6,
@@ -727,7 +727,7 @@ const classOptionsData = [
   },
   {
     name: "Hunter",
-    category: "advanced",
+    category: "dolemnwood",
     requirements: "Minimum 9 constitution, Minimum 9 wisdom",
     primeReqs: ["dexterity"],
     hd: 8,
@@ -754,7 +754,7 @@ const classOptionsData = [
   },
   {
     name: "Knight (DV)",
-    category: "advanced",
+    category: "dolemnwood",
     requirements: "Minimum 9 constitution, Minimum 9 dexterity",
     primeReqs: ["strength"],
     hd: 8,
@@ -781,7 +781,7 @@ const classOptionsData = [
   },
   {
     name: "Minstrel",
-    category: "advanced",
+    category: "dolemnwood",
     requirements: "Minimum 9 intelligence",
     primeReqs: ["charisma, dexterity"],
     checkPrimeReqRequirements: function (abilityScore1, abilityScore2) {
@@ -818,7 +818,7 @@ const classOptionsData = [
   },
   {
     name: "Moss Dwarf",
-    category: "advanced",
+    category: "dolemnwood",
     requirements: "Minimum 9 strength",
     primeReqs: ["constitution, wisdom"],
     checkPrimeReqRequirements: function (abilityScore1, abilityScore2) {
@@ -857,7 +857,7 @@ const classOptionsData = [
   },
   {
     name: "Woodgrue",
-    category: "advanced",
+    category: "dolemnwood",
     requirements: "Minimum 9 dexterity",
     primeReqs: ["charisma"],
     hd: 6,
