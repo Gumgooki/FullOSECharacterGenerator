@@ -1,99 +1,132 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 import {
   magicUserSpells,
   druidSpells,
-  illusionistSpells
-} from '../../data/spells'
-import { chooseRandomItem } from '../../utilities/utilities'
-import Option from '../../components/general/Option'
+  illusionistSpells,
+  divineSpells,
+  elfRunes,
+  mossKnacks,
+  fairyGlamours,
+} from "../../data/spells";
+import { chooseRandomItem } from "../../utilities/utilities";
+import Option from "../../components/general/Option";
 
 export default function SpellSelection({
   characterClass,
-  setCharacterStatistics
+  setCharacterStatistics,
 }) {
-  const [spellSelected, setSpellSelected] = useState('')
+  const [spellSelected, setSpellSelected] = useState("");
 
   const chooseSpells = () => {
-    let randomSpell
+    let randomSpell;
 
     if (characterClass.arcaneSpells) {
-      randomSpell = chooseRandomItem(magicUserSpells)
+      randomSpell = chooseRandomItem(magicUserSpells);
     }
 
     if (characterClass.druidSpells) {
-      randomSpell = chooseRandomItem(druidSpells)
+      randomSpell = chooseRandomItem(druidSpells);
     }
 
     if (characterClass.illusionistSpells) {
-      randomSpell = chooseRandomItem(illusionistSpells)
+      randomSpell = chooseRandomItem(illusionistSpells);
     }
 
-    setSpellSelected(randomSpell)
-    setCharacterStatistics((prevState) => {
-      return { ...prevState, spell: randomSpell, hasSpells: true }
-    })
+    if (characterClass.elfRunes) {
+      randomSpell = chooseRandomItem(elfRunes);
+    }
+    if (characterClass.mossKnacks) {
+      randomSpell = chooseRandomItem(mossKnacks);
+    }
+    if (characterClass.divineSpells) {
+      randomSpell = chooseRandomItem(divineSpells);
+    }
+    if (characterClass.fairyGlamours) {
+      randomSpell = chooseRandomItem(fairyGlamours);
+    }
 
-    return randomSpell
-  }
+    setSpellSelected(randomSpell);
+    setCharacterStatistics((prevState) => {
+      return { ...prevState, spell: randomSpell, hasSpells: true };
+    });
+
+    return randomSpell;
+  };
 
   const spellsList = () => {
-    let spellList = ''
+    let spellList = "";
 
     if (characterClass.arcaneSpells) {
-      spellList = magicUserSpells
+      spellList = magicUserSpells;
     }
 
     if (characterClass.druidSpells) {
-      spellList = druidSpells
+      spellList = druidSpells;
     }
 
     if (characterClass.illusionistSpells) {
-      spellList = illusionistSpells
+      spellList = illusionistSpells;
+    }
+
+    if (characterClass.elfRunes) {
+      spellList = elfRunes;
+    }
+    if (characterClass.mossKnacks) {
+      spellList = mossKnacks;
+    }
+    if (characterClass.divineSpells) {
+      spellList = divineSpells;
+    }
+    if (characterClass.fairyGlamours) {
+      spellList = fairyGlamours;
     }
 
     return spellList.map((spell, index) => {
-      return <Option key={index} value={spell.toString()}></Option>
-    })
-  }
+      return <Option key={index} value={spell.toString()}></Option>;
+    });
+  };
 
   const handleSpellChange = (event) => {
-    setSpellSelected(event.target.value)
+    setSpellSelected(event.target.value);
     setCharacterStatistics({
       ...setCharacterStatistics,
       spell: event.target.value,
-      hasSpells: true
-    })
-  }
+      hasSpells: true,
+    });
+  };
 
   const hasSpells = !!(
     characterClass.arcaneSpells ||
     characterClass.divineSpells ||
     characterClass.illusionistSpells ||
-    characterClass.druidSpells
-  )
+    characterClass.druidSpells ||
+    characterClass.fairyGlamours ||
+    characterClass.elfRunes ||
+    characterClass.mossKnacks
+  );
 
   return (
     <React.Fragment>
       {hasSpells && (
-        <div className='spell-selection-menu'>
-          <h5 className='class-ability-menu--header'>
+        <div className="spell-selection-menu">
+          <h5 className="class-ability-menu--header">
             {characterClass.name} Spells
           </h5>
           <select
-            className='spells-select'
+            className="spells-select"
             value={spellSelected}
             onChange={handleSpellChange}
           >
-            <option value='' disabled>
+            <option value="" disabled>
               Select Spell
             </option>
             {spellsList()}
           </select>
           <button
-            className='button--random-spell'
+            className="button--random-spell"
             onClick={() => {
-              chooseSpells()
+              chooseSpells();
             }}
           >
             Random Spell
@@ -101,10 +134,10 @@ export default function SpellSelection({
         </div>
       )}
     </React.Fragment>
-  )
+  );
 }
 
 SpellSelection.propTypes = {
   characterClass: PropTypes.object,
-  setCharacterStatistics: PropTypes.func
-}
+  setCharacterStatistics: PropTypes.func,
+};

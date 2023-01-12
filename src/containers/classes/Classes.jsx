@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
-import ClassDescription from './ClassDescription'
-import ClassOptionsButton from '../../components/class/ClassOptionsButton'
-import classOptionsData from '../../data/classOptionsData'
-import PropTypes from 'prop-types'
-import CharacterClasses from '../../components/class/CharacterClasses'
-import Checkbox from '../../components/general/Checkbox'
+import React, { useState } from "react";
+import ClassDescription from "./ClassDescription";
+import ClassOptionsButton from "../../components/class/ClassOptionsButton";
+import classOptionsData from "../../data/classOptionsData";
+import PropTypes from "prop-types";
+import CharacterClasses from "../../components/class/CharacterClasses";
+import Checkbox from "../../components/general/Checkbox";
 
 export default function ClassOptions(props) {
-  const { characterClass, abilityScores, changeCharacterClass } = props
+  const { characterClass, abilityScores, changeCharacterClass } = props;
 
-  const [advancedClassesDisplay, setAdvancedClassesDisplay] = useState(false)
+  const [advancedClassesDisplay, setAdvancedClassesDisplay] = useState(false);
+  const [dolemnwoodClassesDisplay, setDolemnWoodClassesDisplay] =
+    useState(false);
 
   const listClassOptions = (classType) => {
     const classData = classOptionsData.filter((characterClass) => {
-      return characterClass.category === classType
-    })
+      return characterClass.category === classType;
+    });
 
     const classOptions = classData.map((item) => {
       return (
@@ -24,22 +26,22 @@ export default function ClassOptions(props) {
           abilityScores={abilityScores}
           changeCharacterClass={changeCharacterClass}
         ></ClassOptionsButton>
-      )
-    })
-    return classOptions
-  }
+      );
+    });
+    return classOptions;
+  };
 
   return (
-    <div className='class-options-container container'>
+    <div className="class-options-container container">
       <CharacterClasses
-        classType='basic'
+        classType="basic"
         callback={listClassOptions}
       ></CharacterClasses>
 
-      <h3 className='advanced-classes-header'>
+      <h3 className="advanced-classes-header">
         Advanced Classes
         <Checkbox
-          value='Advanced Classes'
+          value="Advanced Classes"
           checkedCondition={advancedClassesDisplay}
           callback={() => setAdvancedClassesDisplay(!advancedClassesDisplay)}
         ></Checkbox>
@@ -47,14 +49,32 @@ export default function ClassOptions(props) {
 
       {advancedClassesDisplay && (
         <CharacterClasses
-          classType='advanced'
+          classType="advanced"
+          callback={listClassOptions}
+        ></CharacterClasses>
+      )}
+
+      <h3 className="dolemnwood-classes-header">
+        Dolemnwood Classes
+        <Checkbox
+          value="Dolemnwood Classes"
+          checkedCondition={dolemnwoodClassesDisplay}
+          callback={() =>
+            setDolemnWoodClassesDisplay(!dolemnwoodClassesDisplay)
+          }
+        ></Checkbox>
+      </h3>
+
+      {dolemnwoodClassesDisplay && (
+        <CharacterClasses
+          classType="dolemnwood"
           callback={listClassOptions}
         ></CharacterClasses>
       )}
 
       <ClassDescription characterClass={characterClass}></ClassDescription>
     </div>
-  )
+  );
 }
 
 ClassOptions.propTypes = {
@@ -71,7 +91,7 @@ ClassOptions.propTypes = {
     constitution: PropTypes.number,
     constitutionOriginal: PropTypes.number,
     charisma: PropTypes.number,
-    charismaOriginal: PropTypes.number
+    charismaOriginal: PropTypes.number,
   }),
-  changeCharacterClass: PropTypes.func
-}
+  changeCharacterClass: PropTypes.func,
+};

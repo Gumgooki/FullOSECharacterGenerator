@@ -1,0 +1,30 @@
+Stuff To Do (Functionality):
+
+-Pointbuy doesn't seem to work right.
+  -Something to do with the prime requisites
+
+-Spells + Runes + Knocks
+  -Will need to implement a way to only show the spells if it's relevant to the apprioriate class
+  -Have a way to show multiple spell selections if available (glamors + runes mostly)
+
+Equipment
+  -Give an option to go to the normla Equipment screen or to the dolemnwood generators
+  -Update existing equipment screen to add the additional armor, weapons, and items from dolemnwood
+  -Fix the bug with dolemnwood classes where appropriate armor options don't exist?
+
+Character Details
+  -Change the name generators based on race/class
+  -Change the languages shown to match what should be available based on class
+  -Change the background/apperance/personality etc tables to be available based on race/class
+  -OPTIONAL: Add a generator for the starsign optional rules.
+
+
+Stuff To Do (Generated PDF Sheet):
+  -Weapons and armor in "Abilities, Skills, Weapons" should match what the character can actually use.
+  -Pull information in to make "Exploration" & "Movement" prefilled out
+    -Would need to add some extra metadata for this.
+  -Spells do not get pulled into the PDF sheet
+
+Stuff To Do (Stretch)
+  -Find a way to make an exported PDF with some optional equipment rules (slot based, hammerspace, etc.)
+  -
