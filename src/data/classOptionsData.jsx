@@ -666,6 +666,7 @@ const classOptionsData = [
     link: "https://oldschoolessentials.necroticgnome.com/srd/",
     arcane: false,
     divine: true,
+    divineSpells: true,
   },
   {
     name: "Elf (DV)",
@@ -696,6 +697,8 @@ const classOptionsData = [
     link: "https://oldschoolessentials.necroticgnome.com/srd/",
     arcane: true,
     divine: false,
+    fairyGlamours: true,
+    elfRunes: true,
   },
   {
     name: "Grimalkin",
@@ -724,6 +727,7 @@ const classOptionsData = [
     link: "https://oldschoolessentials.necroticgnome.com/srd/",
     arcane: false,
     divine: false,
+    fairyGlamours: true,
   },
   {
     name: "Hunter",
@@ -854,6 +858,7 @@ const classOptionsData = [
     link: "https://oldschoolessentials.necroticgnome.com/srd/",
     arcane: false,
     divine: false,
+    mossKnacks: true,
   },
   {
     name: "Woodgrue",
