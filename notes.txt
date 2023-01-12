@@ -3,9 +3,12 @@ Stuff To Do (Functionality):
 -Pointbuy doesn't seem to work right.
   -Something to do with the prime requisites
 
--Spells + Runes + Knocks
-  -Will need to implement a way to only show the spells if it's relevant to the apprioriate class
-  -Have a way to show multiple spell selections if available (glamors + runes mostly)
+-TODO: Spells + Runes + Knocks
+  -TODO: Will need to implement a way to only show the spells if it's relevant to the apprioriate class
+  -TODO: Have a way to show multiple spell selections if available (glamors + runes mostly)
+  TODO: Export spell info to the PDF
+      -TODO: THis has been fixed for magic user, but will need to update the rules in PDFExport and maybe the classInfo to allow those the new stuff to show up
+
 
 Equipment
   -Give an option to go to the normla Equipment screen or to the dolemnwood generators
